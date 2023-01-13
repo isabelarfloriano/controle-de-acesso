@@ -1,5 +1,6 @@
 package com.trybe.acc.java.controledeacesso;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -7,9 +8,9 @@ import java.util.ArrayList;
  *
  */
 public class Cliente {
-  static ArrayList<Short> menores;
-  static ArrayList<Short> adultos;
-  static ArrayList<Short> cinquentaMais;
+  static ArrayList<Short> menores = new ArrayList<Short>();
+  static ArrayList<Short> adultos = new ArrayList<Short>();
+  static ArrayList<Short> cinquentaMais = new ArrayList<Short>();
 
   /**
    * metodo que classifica o cliente conforme a idade e registra seu acesso.
@@ -27,4 +28,31 @@ public class Cliente {
     }
   }
 
+  /**
+   * metodo que calcula e imprime o relatorio de acessos baseados na classificação de idade.
+   */
+  public static void gerarRelatorio() {
+    DecimalFormat df = new DecimalFormat();
+    df.applyPattern("#.#");
+
+    int totalMenores = menores.size();
+    int totalAdultos = adultos.size();
+    int totalCinquentaMais = cinquentaMais.size();
+
+    System.out.println("----- Quantidade -----");
+    System.out.println("menores: " + totalMenores);
+    System.out.println("adultas: " + totalAdultos);
+    System.out.println("a partir de 50: " + totalCinquentaMais);
+    
+    int totalClientes = totalMenores + totalAdultos + totalCinquentaMais;
+    
+    System.out.println("----- Percentual -----");
+    System.out.println("menores: " + df.format((totalMenores / (float) totalClientes) * 100) + "%");
+    System.out.println("adultas: " + df.format((totalAdultos / (float) totalClientes) * 100) + "%");
+    System.out.println(
+        "a partir de 50: " + df.format((totalCinquentaMais / (float) totalClientes) * 100) + "%");
+    
+    System.out.println("TOTAL: " + totalClientes);
+
+  }
 }
