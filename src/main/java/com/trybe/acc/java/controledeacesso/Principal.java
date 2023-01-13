@@ -28,7 +28,7 @@ public class Principal {
       } else {
         System.out.println("Entre com uma opção válida!");
       }
-    } while (escolha == 2);
+    } while (escolha != 2);
     scan.close();
   }
 }
