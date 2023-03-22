@@ -6,7 +6,7 @@ O sistema apresenta um **menu interativo com as opções de acesso ao estabeleci
 
 <details>
   <summary><strong>Fluxograma</strong></summary><br />
-    ![SistemaFluxograma](img/controle-acesso.png)
+    <img src="img/controle-acesso.png" alt="SistemaFluxograma">
 </details>
 <details>
   <summary><strong>Rodando Localmente a Aplicação</strong></summary><br />
